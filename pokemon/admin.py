@@ -7,11 +7,12 @@ from .models import Pokemon
 @admin.register(Pokemon)
 class PokemonAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "hp", "active",)
-    list_display_links = ("id", "name",)
     list_filter = ("active",)
+    list_display_links = ("id", "name",)
 
     fieldsets = (
         ("general", {"fields": ("name", "hp", "active", "type",)}),
-        ("localization", {"fields": ("name_fr", "name_ar", "name_jp")}),
-        None, {"fields": ("created_at", "updated_at",)})
+        ("localizations", {"fields": ("name_fr", "name_ar", "name_jp",)}),
+        (None, {"fields": ("created_at", "updated_at",)})
+    )
     # fieldssets has str and dictionary
