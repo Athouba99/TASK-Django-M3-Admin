@@ -13,6 +13,5 @@ class PokemonAdmin(admin.ModelAdmin):
     fieldsets = (
         ("general", {"fields": ("name", "hp", "active", "type",)}),
         ("localizations", {"fields": ("name_fr", "name_ar", "name_jp",)}),
-        (None, {"fields": ("created_at", "updated_at",)})
     )
     # fieldssets has str and dictionary

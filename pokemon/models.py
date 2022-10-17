@@ -1,10 +1,4 @@
-from email.policy import default
-from random import choices
-from unittest.util import _MAX_LENGTH
-from venv import create
-from wsgiref.validate import validator
 from django.db import models
-from django.forms import CharField
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 
 # Create your models here.
@@ -28,6 +22,7 @@ class Pokemon(models.Model):
     name_ar = models.CharField(max_length=30, default="")
     name_jp = models.CharField(max_length=30, default="")
     create_at = models.DateTimeField(auto_now_add=True)
+
     # run only one time
     modified_at = models.DateTimeField(auto_now=True)
     # to save any time when the is an update
